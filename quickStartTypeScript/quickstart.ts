@@ -1,12 +1,20 @@
-interface Person{
-    firstName: string;
-    lastName: string;
+interface Person {
+    firstName:string;
+    lastName:string;
 }
 
-var user = {firstName: "Black", lastName:"Knight"};
+class Student {
+    fullName:string;
 
-function greeter(person: Person) {
-    return "Hello, " + person.firstName+ " "+ person.lastName;
+    constructor(public firstName, public middleInitial, public lastName) {
+        this.fullName = firstName + " " + middleInitial + " " + lastName;
+    }
+}
+
+var user = new Student("Black", "*", "Knight");
+
+function greeter(person:Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
 }
 
 document.body.innerHTML = greeter(user);
